@@ -6,6 +6,9 @@ import wallPaper from "../../assets/LandingScreenImage/landingPage.png";
 //custom styles
 import { colors } from "../../Components/Colors";
 import { screenContainer } from "../../Components/Shared";
+import BigText from "../../Components/Texts/bigText";
+import SmallText from "../../Components/Texts/smallText";
+import RegularBTN from "../../Components/BTN/regularBTN";
 
 const LandingScreenContainer = styled(screenContainer)`
   background-color: ${colors.secondary};
@@ -27,8 +30,10 @@ const LandingScreenImage = styled.Image`
 `;
 
 const LandingScreenBottom = styled.View`
+  padding: 25px;
   width: 100%;
   flex: 1;
+  justify-content: flex-end;
 `;
 
 const LandingScreen: FunctionComponent = () => {
@@ -39,7 +44,26 @@ const LandingScreen: FunctionComponent = () => {
         <LandingScreenTop>
           <LandingScreenImage source={wallPaper} />
         </LandingScreenTop>
-        <LandingScreenBottom></LandingScreenBottom>
+        <LandingScreenBottom>
+          <BigText
+            textStyles={{
+              width: "75%",
+              marginBottom: 25,
+              fontWeight: "bold",
+            }}
+          >
+            Track your Payment methodes Safe and Easy !
+          </BigText>
+          <SmallText
+            textStyles={{
+              width: "75%",
+              marginBottom: 25,
+            }}
+          >
+            Best way to store, use and monitor your day to day transfer.
+          </SmallText>
+          <RegularBTN onPress={() => {}}>Get Started</RegularBTN>
+        </LandingScreenBottom>
       </LandingScreenContainer>
     </>
   );
