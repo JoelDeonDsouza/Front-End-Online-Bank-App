@@ -6,6 +6,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LandingScreen from "../Screens/InitialScreen";
 import HomeScreen from "../Screens/Home";
 import { colors } from "../Components/Colors";
+import WelcomeGreetong from "../Components/Header/greeting";
+import Profile from "../Components/Header/profile";
+import profile from "../assets/profile.png";
 
 export type RootStackNavigation = {
   LandingScreen: undefined;
@@ -27,6 +30,18 @@ const NavigationRoot: FunctionComponent = () => {
             height: 100,
           },
           headerTintColor: colors.secondary,
+          headerRightContainerStyle: {
+            paddingRight: 25,
+          },
+          headerLeftContainerStyle: {
+            paddingLeft: 10,
+          },
+          headerRight: () => (
+            <Profile
+              img={profile}
+              imgContainerStyle={{ backgroundColor: colors.medium }}
+            />
+          ),
         }}
       >
         {/* Just testing home navigation function */}
@@ -35,7 +50,20 @@ const NavigationRoot: FunctionComponent = () => {
           component={LandingScreen}
           options={{ headerShown: false }}
         /> */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            headerTitle: (props) => (
+              <WelcomeGreetong
+                mainText="Hey Joe"
+                subText="Good to see you!"
+                {...props}
+              />
+            ),
+            headerLeft: () => <></>,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
