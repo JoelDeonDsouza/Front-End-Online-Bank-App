@@ -55,14 +55,18 @@ const CardItems: FunctionComponent<VirtualCardsProps> = (props) => {
           <VirtualCardRow>
             <View style={{ flex: 3 }}>
               <SmallText
-                textStyles={{ marginBottom: 5, color: colors.primary }}
+                textStyles={{
+                  marginBottom: 5,
+                  color: colors.light,
+                  fontWeight: "bold",
+                }}
               >
                 Total Balance
               </SmallText>
               <MediumText
                 textStyles={{ fontSize: 20, color: colors.secondary }}
               >
-                {props.balance}
+                €{props.balance}
               </MediumText>
             </View>
             <VirtualCardLogo source={props.logo} />
