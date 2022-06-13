@@ -11,7 +11,7 @@ import cardImg from "../../assets/cardsImg/cardImg.jpeg";
 
 const VirtualCardImage = styled.ImageBackground`
   height: 100%;
-  width: ${ScreenWidth * 0.67}px;
+  width: ${ScreenWidth * 0.9}px;
   background-color: ${colors.gray};
   border-radius: 25px;
   margin-right: 25px;
@@ -52,6 +52,9 @@ const CardItems: FunctionComponent<VirtualCardsProps> = (props) => {
               *****{props.accountNO.slice(6, 10)}
             </MediumText>
           </VirtualCardRow>
+          <MediumText textStyles={{ fontSize: 26, color: colors.gray }}>
+            {props.name}
+          </MediumText>
           <VirtualCardRow>
             <View style={{ flex: 3 }}>
               <SmallText
