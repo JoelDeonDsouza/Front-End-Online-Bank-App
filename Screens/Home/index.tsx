@@ -7,6 +7,13 @@ import { colors } from "../../Components/Colors";
 import VirtualCards from "../../Components/Cards";
 import logo from "../../assets/cardsImg/logo.jpeg";
 import UseageSection from "../../Components/Useage/useageSection";
+import UsersAccounts from "../../Components/UsersAccounts";
+
+//UsersAccounts Img
+import user1 from "../../assets/Users/user1.png";
+import user2 from "../../assets/Users/user2.png";
+import user3 from "../../assets/Users/user3.png";
+import user4 from "../../assets/Users/user4.png";
 
 const HomeContainer = styled(screenContainer)`
   background-color: ${colors.light};
@@ -81,11 +88,43 @@ const HomeScreen: FunctionComponent = () => {
     },
   ];
 
+  const userAccountData = [
+    {
+      id: 1,
+      amount: "250",
+      name: "Coby",
+      background: colors.primary,
+      img: user1,
+    },
+    {
+      id: 2,
+      amount: "50",
+      name: "Doby",
+      background: colors.secondary,
+      img: user2,
+    },
+    {
+      id: 3,
+      amount: "100",
+      name: "Cory",
+      background: colors.primary,
+      img: user3,
+    },
+    {
+      id: 4,
+      amount: "400",
+      name: "Olga",
+      background: colors.secondary,
+      img: user4,
+    },
+  ];
+
   return (
     <HomeContainer>
       <StatusBar style="dark" />
       <VirtualCards data={cardsData} />
       <UseageSection data={useageData} />
+      <UsersAccounts data={userAccountData} />
     </HomeContainer>
   );
 };
