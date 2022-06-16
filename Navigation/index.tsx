@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 //navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Ionicons } from "@expo/vector-icons";
 
 import LandingScreen from "../Screens/InitialScreen";
 import HomeScreen from "../Screens/Home";
@@ -9,9 +10,13 @@ import { colors } from "../Components/Colors";
 import WelcomeGreetong from "../Components/Header/greeting";
 import Profile from "../Components/Header/profile";
 import profile from "../assets/profile.png";
+import CardBalance from "../Screens/CardBalance";
+import { VirtualCardsProps } from "../Components/Cards/cardTypes";
 
 export type RootStackNavigation = {
   LandingScreen: undefined;
+  HomeScreen: undefined;
+  CardBalance: VirtualCardsProps;
 };
 
 const Stack = createStackNavigator<RootStackNavigation>();
@@ -43,13 +48,14 @@ const NavigationRoot: FunctionComponent = () => {
             />
           ),
         }}
+        initialRouteName="CardBalance"
       >
         {/* Just testing home navigation function */}
-        {/* <Stack.Screen
+        <Stack.Screen
           name="LandingScreen"
           component={LandingScreen}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
@@ -63,6 +69,25 @@ const NavigationRoot: FunctionComponent = () => {
             ),
             headerLeft: () => <></>,
           }}
+        />
+        <Stack.Screen
+          name="CardBalance"
+          component={CardBalance}
+          options={({ route }) => ({
+            headerTitle: route?.params?.ifFreature,
+            headerTitleAlign: "center",
+            headerBackImage: (props) => (
+              <Ionicons
+                {...props}
+                name="chevron-back"
+                size={26}
+                color={colors.dark}
+              />
+            ),
+            headerLeftContainerStyle: {
+              paddingLeft: 0,
+            },
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
