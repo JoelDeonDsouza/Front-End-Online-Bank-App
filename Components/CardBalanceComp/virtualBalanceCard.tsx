@@ -5,7 +5,7 @@ import BalanceCard from "./balanceCard";
 import { VirtualBalanceProps } from "./types";
 
 const VirtualCardBackgroud = styled.View`
-  width: 100%;
+  width: 110%;
   align-items: center;
   flex: 2;
 `;
