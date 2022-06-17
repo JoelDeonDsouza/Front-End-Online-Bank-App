@@ -22,7 +22,7 @@ const VirtualCardBalance: FunctionComponent<VirtualCardAmountProps> = (
         Your Total Balance
       </SmallText>
       <MediumText textStyles={{ color: colors.secondary, fontSize: 26 }}>
-        ${props.balance}
+        €{props.balance}
       </MediumText>
     </VirtualCardBalanceBackground>
   );

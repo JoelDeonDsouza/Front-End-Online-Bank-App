@@ -30,7 +30,7 @@ const VirtualCardRow = styled.View`
 
 const VirtualCardLogo = styled.Image`
   width: 100%;
-  height: 90%;
+  height: 100%;
   resize-mode: contain;
   flex: 1;
 `;
