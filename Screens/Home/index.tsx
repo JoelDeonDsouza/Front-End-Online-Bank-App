@@ -21,6 +21,7 @@ const HomeContainer = styled(screenContainer)`
   flex: 1;
 `;
 
+//Navigation
 import { NavigationRoot } from "../../Navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 export type Props = StackScreenProps<NavigationRoot, "HomeScreen">;

@@ -36,6 +36,7 @@ const LandingScreenBottom = styled.View`
   justify-content: flex-end;
 `;
 
+//Navigation
 import { NavigationRoot } from "../../Navigation";
 import { StackScreenProps } from "@react-navigation/stack";
 type Props = StackScreenProps<NavigationRoot, "HomeScreen">;
