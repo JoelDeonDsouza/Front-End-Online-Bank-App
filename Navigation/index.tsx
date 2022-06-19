@@ -48,7 +48,7 @@ const NavigationRoot: FunctionComponent = () => {
             />
           ),
         }}
-        initialRouteName="CardBalance"
+        initialRouteName="LandingScreen"
       >
         {/* Just testing home navigation function */}
         <Stack.Screen

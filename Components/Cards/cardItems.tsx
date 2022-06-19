@@ -9,6 +9,9 @@ import { View } from "react-native";
 import { VirtualCardsProps } from "./cardTypes";
 import cardImg from "../../assets/cardsImg/cardImg.jpeg";
 
+import { useNavigation } from "@react-navigation/native";
+import { Props as HomeProps } from "../../Screens/Home";
+
 const VirtualCardImage = styled.ImageBackground`
   height: 100%;
   width: ${ScreenWidth * 0.9}px;
@@ -42,7 +45,11 @@ const VirtualCardLogo = styled.Image`
 `;
 
 const CardItems: FunctionComponent<VirtualCardsProps> = (props) => {
-  const handlePress = () => {};
+  const navigation = useNavigation<HomeProps["navigation"]>();
+  const handlePress = () => {
+    navigation.navigate("CardBalance", { ...props });
+  };
+
   return (
     <VirtualCardImage source={cardImg}>
       <VirtualCardTouchable underlayColor={colors.medium} onPress={handlePress}>

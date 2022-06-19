@@ -21,7 +21,11 @@ const HomeContainer = styled(screenContainer)`
   flex: 1;
 `;
 
-const HomeScreen: FunctionComponent = () => {
+import { NavigationRoot } from "../../Navigation";
+import { StackScreenProps } from "@react-navigation/stack";
+export type Props = StackScreenProps<NavigationRoot, "HomeScreen">;
+
+const HomeScreen: FunctionComponent<Props> = () => {
   const cardsData = [
     {
       id: 1,

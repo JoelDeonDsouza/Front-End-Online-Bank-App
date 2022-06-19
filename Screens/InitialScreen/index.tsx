@@ -25,7 +25,7 @@ const LandingScreenTop = styled.View`
 
 const LandingScreenImage = styled.Image`
   width: 100%;
-  height: 200%;
+  height: 250%;
   resize-mode: stretch;
 `;
 
@@ -36,7 +36,11 @@ const LandingScreenBottom = styled.View`
   justify-content: flex-end;
 `;
 
-const LandingScreen: FunctionComponent = () => {
+import { NavigationRoot } from "../../Navigation";
+import { StackScreenProps } from "@react-navigation/stack";
+type Props = StackScreenProps<NavigationRoot, "HomeScreen">;
+
+const LandingScreen: FunctionComponent<Props> = ({ navigation }) => {
   return (
     <>
       <StatusBar style="light" />
@@ -62,7 +66,13 @@ const LandingScreen: FunctionComponent = () => {
           >
             Best way to store, use and monitor your day to day transfer.
           </SmallText>
-          <RegularBTN onPress={() => {}}>Get Started</RegularBTN>
+          <RegularBTN
+            onPress={() => {
+              navigation.navigate("HomeScreen");
+            }}
+          >
+            Get Started
+          </RegularBTN>
         </LandingScreenBottom>
       </LandingScreenContainer>
     </>
