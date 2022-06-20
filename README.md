@@ -21,7 +21,7 @@
 Clone the project
 
 ```bash
-  git clone https://github.com/JoelDeonDsouza/Front-End-Online-Bank-App
+  git clone https://github.com/JoelDeonDsouza/Front-End-Online-Bank-App.git
 ```
 
 Go to the project directory
