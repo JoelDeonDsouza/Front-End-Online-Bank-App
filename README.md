@@ -30,7 +30,8 @@ Go to the project directory
 Start the React-App
 
 ```bash
-  npm start
+  npm start ||
+  yarn start
 ```
 
 ## Features
